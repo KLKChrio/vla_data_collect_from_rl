@@ -133,3 +133,39 @@ Some examples of packages that can likely be excluded are:
 "<path-to-isaac-sim>/extscache/omni.services.*"     // Services tools
 ...
 ```
+
+
+
+python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable_cameras --max_iterations 90000
+
+
+
+
+################################################################################
+                          Learning iteration 318/6000                            
+
+                            Total steps: 5226496 
+                       Steps per second: 132 
+                        Collection time: 123.369s 
+                          Learning time: 0.058s 
+                        Mean value loss: 0.1962
+                    Mean surrogate loss: -0.0061
+                      Mean entropy loss: 9.9086
+                            Mean reward: 35.50
+                    Mean episode length: 600.00
+                        Mean action std: 0.85
+                   Episode_Reward/alive: 0.1000
+     Episode_Reward/penalty_wrong_grasp: 0.0000
+    Episode_Reward/approach_target_cube: 0.7150
+       Episode_Reward/grasp_target_cube: 1.1539
+        Episode_Reward/lift_target_cube: 0.5047
+    Episode_Reward/align_with_base_cube: 0.8496
+           Episode_Reward/stack_success: 0.0000
+             Episode_Reward/action_rate: -0.1438
+           Episode_Termination/time_out: 1.0000
+            Episode_Termination/success: 0.0000
+ Episode_Termination/cube_out_of_bounds: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 123.43s
+                           Time elapsed: 10:37:33
+                                    ETA: 21:14:16
