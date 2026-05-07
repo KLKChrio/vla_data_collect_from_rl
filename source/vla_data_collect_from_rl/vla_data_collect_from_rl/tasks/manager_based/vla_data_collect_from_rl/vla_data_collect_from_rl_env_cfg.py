@@ -73,17 +73,17 @@ class FrankaVLACubeSceneCfg(InteractiveSceneCfg):
     cube_1 = RigidObjectCfg(
         prim_path="{ENV_REGEX_NS}/Cube_1",
         init_state=RigidObjectCfg.InitialStateCfg(pos=[0.4, 0.0, 0.0203], rot=[1, 0, 0, 0]),
-        spawn=UsdFileCfg(usd_path=f"{ISAAC_NUCLEUS_DIR}/Props/Blocks/blue_block.usd", scale=(1.0, 1.0, 1.0), rigid_props=COMMON_CUBE_PROPS, semantic_tags=[("class", "cube_1")]),
+        spawn=UsdFileCfg(usd_path=f"{ISAAC_NUCLEUS_DIR}/Props/Blocks/blue_block.usd", scale=(0.5, 0.5, 0.5), rigid_props=COMMON_CUBE_PROPS, semantic_tags=[("class", "cube_1")]),
     )
     cube_2 = RigidObjectCfg(
         prim_path="{ENV_REGEX_NS}/Cube_2",
         init_state=RigidObjectCfg.InitialStateCfg(pos=[0.55, 0.05, 0.0203], rot=[1, 0, 0, 0]),
-        spawn=UsdFileCfg(usd_path=f"{ISAAC_NUCLEUS_DIR}/Props/Blocks/red_block.usd", scale=(1.0, 1.0, 1.0), rigid_props=COMMON_CUBE_PROPS, semantic_tags=[("class", "cube_2")]),
+        spawn=UsdFileCfg(usd_path=f"{ISAAC_NUCLEUS_DIR}/Props/Blocks/red_block.usd", scale=(0.5, 0.5, 0.5), rigid_props=COMMON_CUBE_PROPS, semantic_tags=[("class", "cube_2")]),
     )
     cube_3 = RigidObjectCfg(
         prim_path="{ENV_REGEX_NS}/Cube_3",
         init_state=RigidObjectCfg.InitialStateCfg(pos=[0.60, -0.1, 0.0203], rot=[1, 0, 0, 0]),
-        spawn=UsdFileCfg(usd_path=f"{ISAAC_NUCLEUS_DIR}/Props/Blocks/green_block.usd", scale=(1.0, 1.0, 1.0), rigid_props=COMMON_CUBE_PROPS, semantic_tags=[("class", "cube_3")]),
+        spawn=UsdFileCfg(usd_path=f"{ISAAC_NUCLEUS_DIR}/Props/Blocks/green_block.usd", scale=(0.5, 0.5, 0.5), rigid_props=COMMON_CUBE_PROPS, semantic_tags=[("class", "cube_3")]),
     )
 
     # 末端执行器追踪

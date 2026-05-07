@@ -1,18 +1,51 @@
-# Template for Isaac Lab Projects
+# VLA data collecting via RL
 
-## Overview
+## 概述
 
-This project/repository serves as a template for building projects or extensions based on Isaac Lab.
-It allows you to develop in an isolated environment, outside of the core Isaac Lab repository.
+本项目用作基于 Isaac Lab 构建项目。旨在实现利用强化学习PPO算法针对VLA的仿真环境进行数据采集工作
 
-**Key Features:**
+## 启动训练
 
-- `Isolation` Work outside the core Isaac Lab repository, ensuring that your development efforts remain self-contained.
-- `Flexibility` This template is set up to allow your code to be run as an extension in Omniverse.
+针对所需要的任务，进行训练，得到策略后去产生数据
 
-**Keywords:** extension, template, isaaclab
+当前任务：stack blue cube on the red cube(把蓝色方块放到红色方块上)
 
-## Installation
+运行以下指令前确保在正确工作空间下且已经激活ISAAC LAB的虚拟环境
+
+```bash
+cd vla_data_collect_from_rl/
+source /home/chiro/IsaacLab/env_isaaclab/bin/activate
+```
+
+### 第一次运行
+
+```bash
+python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable_cameras --max_iterations 90000
+```
+
+--task 任务名
+--num_envs 并行环境个数
+--enable_cameras 启动cam渲染
+--max_iterations 总迭代轮次
+
+### 断点续练
+
+```bash
+python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable_cameras --max_iterations 90000 --resume --load_run 2026-04-26_23-02-08 --checkpoint model_200.pt
+```
+
+### 演示
+```bash
+python scripts/rsl_rl/play.py --task Franka-VLA-Stack-v0 --num_envs 1 --checkpoint /home/chiro/vla_data_collect_from_rl/vla_data_collect_from_rl/logs/rsl_rl/franka_vla_stack_expert_16envs/2026-04-26_23-02-08/model_200.pt --enable_cameras
+```
+
+--resume 确保在指定检查点开始训练而不是从头
+--load_run 检查点所在日期文件名
+--checkpoint 检查点文件名
+
+tips：检查点文件位于`/home/chiro/vla_data_collect_from_rl/vla_data_collect_from_rl/logs/rsl_rl/franka_vla_stack_expert_16envs/2026-04-26_23-02-08`下的`model_200.pt`
+
+## 安装（官方教程）
 
 - Install Isaac Lab by following the [installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html).
   We recommend using the conda or uv installation as it simplifies calling Python scripts from the terminal.
@@ -135,7 +168,6 @@ Some examples of packages that can likely be excluded are:
 ```
 
 
-
 python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable_cameras --max_iterations 90000
 
 
@@ -169,3 +201,10 @@ python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable
                          Iteration time: 123.43s
                            Time elapsed: 10:37:33
                                     ETA: 21:14:16
+
+
+
+python scripts/rsl_rl/play.py --task Franka-VLA-Stack-v0 --num_envs 1 --checkpoint /home/chiro/vla_data_collect_from_rl/vla_data_collect_from_rl/logs/rsl_rl/franka_vla_stack_expert_16envs/2026-04-26_23-02-08/model_200.pt --enable_cameras
+
+
+python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable_cameras --resume --load_run 2026-04-26_23-02-08 --checkpoint model_200.pt
