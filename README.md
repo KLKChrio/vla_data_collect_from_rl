@@ -32,6 +32,8 @@ python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable
 
 ```bash
 python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable_cameras --max_iterations 90000 --resume --load_run 2026-04-26_23-02-08 --checkpoint model_200.pt
+
+python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable_cameras --max_iterations 89400 --resume --load_run 2026-05-07_13-33-41 --checkpoint model_600.pt
 ```
 
 ### 演示
