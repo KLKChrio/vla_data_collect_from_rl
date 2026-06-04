@@ -34,11 +34,15 @@ python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable
 python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable_cameras --max_iterations 90000 --resume --load_run 2026-04-26_23-02-08 --checkpoint model_200.pt
 
 python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable_cameras --max_iterations 89400 --resume --load_run 2026-05-07_13-33-41 --checkpoint model_600.pt
+
+python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable_cameras --max_iterations 89000 --resume --load_run 2026-05-09_22-21-01 --checkpoint model_1000.pt
+
+python scripts/rsl_rl/train.py --task Franka-VLA-Stack-v0 --num_envs 16 --enable_cameras --max_iterations 88800 --resume --load_run 2026-06-03_11-09-56 --checkpoint model_1200.pt
 ```
 
 ### 演示
 ```bash
-python scripts/rsl_rl/play.py --task Franka-VLA-Stack-v0 --num_envs 1 --checkpoint /home/chiro/vla_data_collect_from_rl/vla_data_collect_from_rl/logs/rsl_rl/franka_vla_stack_expert_16envs/2026-04-26_23-02-08/model_200.pt --enable_cameras
+python scripts/rsl_rl/play.py --task Franka-VLA-Stack-v0 --num_envs 1 --checkpoint /home/chiro/vla_data_collect_from_rl/vla_data_collect_from_rl/logs/rsl_rl/franka_vla_stack_expert_16envs/2026-06-03_11-09-56/model_1200.pt --enable_cameras
 ```
 
 --resume 确保在指定检查点开始训练而不是从头
